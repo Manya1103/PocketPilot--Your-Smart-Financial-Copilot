@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiHome, FiBarChart, FiTarget, FiSettings, FiCamera } from 'react-icons/fi';
 
-const BottomNavigation = ({ activeTab = 'home', onTabClick }) => {
+const BottomNavigation = ({ activeTab = 'home', onTabClick, onScanClick }) => {
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-gray-800 bg-opacity-80 backdrop-blur-sm shadow-lg">
       <div className="flex justify-between py-4 px-4 mx-auto" style={{ maxWidth: '450px' }}>
@@ -25,6 +25,7 @@ const BottomNavigation = ({ activeTab = 'home', onTabClick }) => {
           <div className="absolute -top-10 transform -translate-x-1/2 left-1/2">
             <button 
               className="bg-blue-500 rounded-full p-4 shadow-lg hover:bg-blue-600 transition-colors"
+              onClick={onScanClick} // Use the new prop here
             >
               <FiCamera className="h-6 w-6 text-white" />
             </button>
